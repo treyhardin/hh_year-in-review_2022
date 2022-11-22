@@ -1,0 +1,23 @@
+.brandWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-m);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: var(--color-reverse);
+    mix-blend-mode: difference;
+    z-index: 999;
+    padding: var(--space-l);
+}
+
+.logo {
+    text-decoration: none;
+    margin: 0;
+}
+
+.contact {
+    text-decoration: none;
+    margin: 0;
+}

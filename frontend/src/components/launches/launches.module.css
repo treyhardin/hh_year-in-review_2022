@@ -3,6 +3,21 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    position: relative;
+}
+
+.stickyWrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    z-index: 3;
 }
 
 .projectsWrapper {
@@ -11,4 +26,11 @@
     /* justify-content: flex-end; */
     padding: 0 var(--space-l);
     align-self: stretch;
+}
+
+.activeProjectTitle {
+    font-size: 10vw;
+    position: sticky;
+    top: 0;
+    text-align: center;
 }

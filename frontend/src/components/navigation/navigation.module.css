@@ -1,0 +1,37 @@
+.navigation {
+    background-color: var(--color-reverse);
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0 var(--space-l);
+    gap: var(--space-l);
+    border-radius: var(--border-s);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: var(--space-l);
+    overflow: hidden;
+    height: 50px;
+    z-index: 999;
+    box-shadow: var(--shadow-s);
+}
+
+.scrollProgress {
+    position: absolute;
+    content: "";
+    width: calc(var(--scroll, 0) * 1%);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-blue);
+    transition: width var(--easing-default);
+    mix-blend-mode: difference;
+}
+
+.navLink {
+    margin: 0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

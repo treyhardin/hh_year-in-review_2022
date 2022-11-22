@@ -5,10 +5,11 @@ import SectionTitle from '../section-title/section-title';
 import ProjectCard from '../project-card/project-card';
 
 
+const [ activeProject, setActiveProject ] = createSignal()
+
 function Launches() {
 
-  const [ projects, setProjects ] = createSignal() 
-  const [ activeProject, setActiveProject ] = createSignal()
+  const [ projects, setProjects ] = createSignal('hi') 
 
   // Fetch Projects from Sanity
 
@@ -29,9 +30,11 @@ function Launches() {
 
   return (
     <section class={styles.launchesSection}>
-      <SectionTitle title="16" label="Projects Launched" />
-      <div class={styles.activeProjectTitle}>
-        <div class={styles.activeProjectTitle}>{activeProject()}</div>
+      <div class={styles.stickyWrapper}>
+        <SectionTitle title="16" label="Projects Launched" />
+        <div class={styles.activeProjectTitle}>
+          <div class={styles.activeProjectTitle}>{activeProject()}</div>
+        </div>
       </div>
       <div class={styles.projectsWrapper}>
         <For each={projects()}>
@@ -50,4 +53,4 @@ function Launches() {
   );
 }
 
-export default Launches;
+export { Launches, setActiveProject };

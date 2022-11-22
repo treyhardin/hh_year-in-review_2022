@@ -1,38 +1,7 @@
 import styles from './project-card.module.css';
+import { setActiveProject } from '../launches/launches'
 
 function ProjectCard(props) {
-
-    const animateScroll = (projectCard) => {
-
-        const maxAngle = 6
-        const rotationMultiplier = 3
-
-        const targetRotation = (Math.random() * 2 - 1) * maxAngle;
-        const initialRotation = targetRotation * -1 * rotationMultiplier
-
-        projectCard.style.setProperty('--rotation', initialRotation)
-
-        if (props.currentIndex > 0) {
-
-            window.addEventListener('scroll', (e) => {
-
-                const boundingBox = projectCard.getBoundingClientRect();
-
-                if (boundingBox.top <= window.innerHeight && boundingBox.top > 0) {
-                
-                    let scrollProgress = 1 - boundingBox.top / window.innerHeight
-                    
-                    let valueRange = targetRotation - initialRotation
-                    
-                    let newValue = (valueRange * scrollProgress) + initialRotation
-                    projectCard.style.setProperty('--rotation', newValue)
-                    
-                }
-                
-            })
-        }
-
-    }
 
 
     const positionCard = (projectCard) => {
@@ -46,18 +15,52 @@ function ProjectCard(props) {
         projectCard.style.setProperty("--offsetY", `${offsetY}`);
     }
 
+    const animateScroll = (projectCard) => {
+
+        const maxAngle = 6
+        const rotationMultiplier = 3
+
+        const targetRotation = (Math.random() * 2 - 1) * maxAngle;
+        const initialRotation = targetRotation * -1 * rotationMultiplier
+
+        projectCard.style.setProperty('--rotation', initialRotation)
+
+        
+
+            window.addEventListener('scroll', (e) => {
+
+                const boundingBox = projectCard.getBoundingClientRect();
+
+                if (boundingBox.top <= window.innerHeight && boundingBox.top > 0) {
+
+                    setActiveProject(props.name)
+
+                    if (props.currentIndex > 0) {
+                
+                        let scrollProgress = 1 - boundingBox.top / window.innerHeight
+                        
+                        let valueRange = targetRotation - initialRotation
+                        
+                        let newValue = (valueRange * scrollProgress) + initialRotation
+                        projectCard.style.setProperty('--rotation', newValue)
+
+                    }
+                    
+                }
+                
+            })
+
+    }
+
     const transformCard = (projectCard) => {
         positionCard(projectCard)
         animateScroll(projectCard)
-
 
         window.addEventListener('resize', () => {
             rotateCard(projectCard)
             positionCard(projectCard)
         })
     }
-
-    
 
     return (
         <div class={styles.projectCard} ref={projectCard => transformCard(projectCard)} >
