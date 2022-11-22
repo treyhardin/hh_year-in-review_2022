@@ -1,0 +1,23 @@
+{
+  "name": "vite-template-solid",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^3.0.9",
+    "vite-plugin-solid": "^2.3.0"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.2",
+    "@sanity/client": "^3.4.1",
+    "gsap": "^3.11.3",
+    "solid-js": "^1.5.1",
+    "three": "^0.146.0"
+  }
+}
