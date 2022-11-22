@@ -1,0 +1,14 @@
+.launchesSection {
+    background-color: var(--color-red);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.projectsWrapper {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+    padding: 0 var(--space-l);
+    align-self: stretch;
+}

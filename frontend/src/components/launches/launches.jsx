@@ -1,43 +1,50 @@
 import { createSignal, For, onMount } from 'solid-js';
-import { Client } from "@notionhq/client"
 import styles from './launches.module.css';
 import client from '../fetch/fetch';
-
-// const notion = new Client({ auth: import.meta.env.VITE_NOTION_TOKEN })
-// const databaseId = import.meta.env.VITE_NOTION_DATABASE_ID
-
-
+import SectionTitle from '../section-title/section-title';
+import ProjectCard from '../project-card/project-card';
 
 
 function Launches() {
 
   const [ projects, setProjects ] = createSignal() 
+  const [ activeProject, setActiveProject ] = createSignal()
+
+  // Fetch Projects from Sanity
 
   const fetchProjects = () => {
     // fetching the data
-      client
-        .fetch('*[_type == "project"]{name, "imageUrl": image.asset->url}', {})
-        .then(res => {
-          setProjects(res)
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    };
+    client
+      .fetch('*[_type == "project"]{name, "imageUrl": image.asset->url}', {})
+      .then(res => {
+        setProjects(res)
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
     
   fetchProjects()
 
+
   return (
     <section class={styles.launchesSection}>
-      <h1>Launches</h1>
-      <For each={projects()}>
-        {project => 
-          <div class={styles.projectCard}>
-            <p class={styles.projectTitle}>{project.name}</p>
-            <img class={styles.projectImage} src={project.imageUrl} />
-          </div>
-        }
-      </For>
+      <SectionTitle title="16" label="Projects Launched" />
+      <div class={styles.activeProjectTitle}>
+        <div class={styles.activeProjectTitle}>{activeProject()}</div>
+      </div>
+      <div class={styles.projectsWrapper}>
+        <For each={projects()}>
+          {(project, i) => 
+            <ProjectCard 
+              name={project.name} 
+              imageUrl={project.imageUrl} 
+              currentIndex={i()}
+              totalProjects={projects().length} 
+            />
+          }
+        </For>
+      </div>
       {/* <p ref={testRef}>Test Text Goes Here</p> */}
     </section>
   );

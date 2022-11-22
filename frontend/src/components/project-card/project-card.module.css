@@ -1,0 +1,25 @@
+
+.projectCard {
+    --offsetX: 0;
+    --offsetY: 0;
+    --rotation: 0;
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+}
+
+.projectCardInner {
+    position: absolute;
+    top: calc(var(--offsetY) * 1px);
+    left: calc(var(--offsetX) * 1px);
+    transform-origin: top left;
+    transform: rotate(calc(var(--rotation) * 1deg)) translate(-50%, -50%);
+}
+
+.projectImage {
+    max-height: 60vh;
+}
+
+.projectTitle {
+    margin-top: var(--space-s);
+}
