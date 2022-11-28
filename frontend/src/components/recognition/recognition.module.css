@@ -1,0 +1,18 @@
+.recognition {
+    display: flex;
+    flex-direction: column;
+}
+
+.recognitionWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10vw;
+    padding: 0 var(--space-l);
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'main . main';
+    padding: 0 var(--space-l); */
+    /* gap: var(--space-l); */
+}

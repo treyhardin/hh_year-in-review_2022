@@ -2,6 +2,7 @@ import { createEffect, onMount } from 'solid-js';
 import * as THREE from 'three';
 import gsap from "gsap";
 import styles from './hero.module.css';
+import changePageColor from '../../helpers/change-page-color';
 
 function Hero() {
 
@@ -147,7 +148,7 @@ function animate() {
 }
 
   return (
-    <section class={styles.hero}>
+    <section class={styles.hero} ref={section => changePageColor(section, 'var(--page-color-default')}>
         <div class='container'>
             <div class={styles.heroInner}>
                 <div class={styles.heroText}>

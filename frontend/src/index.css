@@ -1,5 +1,8 @@
-:root {
+* {
   box-sizing: border-box;
+}
+
+:root {
 
   /* Colors */
   --color-ink: #3C3C3C;
@@ -7,6 +10,9 @@
   --color-offwhite: #d9d9d9;
   --color-red: #ff4949;
   --color-blue: #0500EF;
+  --color-yellow: #FCFD1A;
+
+  --page-color-default: var(--color-offwhite);
 
   /* Space */
   --space-xs: 5px;
@@ -40,10 +46,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-offwhite);
+  background-color: var(--page-color, var(--page-color-default));
   font-size: 14px;
   line-height: 1.4;
   color: var(--color-ink);
+  transition: background-color var(--easing-default);
+  overflow-x: hidden;
 }
 
 @font-face {

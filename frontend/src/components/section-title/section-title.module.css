@@ -2,9 +2,33 @@
     position: sticky;
     top: 0;
     display: inline-block;
-    border: 1px solid var(--color-ink);
+    border: 1px solid currentColor;
     align-self: flex-end;
-    /* box-shadow: 0.5px 0.5px var(--color-ink), inset -0.5px -0.5px var(--color-ink); */
+    z-index: 3;
+    mix-blend-mode: difference;
+    color: var(--color-reverse);
+    margin: 0;
+}
+
+.sectionTitleWrapper.right {
+    align-self: flex-end;
+}
+
+.sectionTitleWrapper.left {
+    align-self: flex-start;
+}
+
+.sectionTitleWrapper.center {
+    align-self: center;
+    top: 50vh;
+    transform: translateY(-50%);
+}
+
+.sectionTitleWrapper.sectionTitleWrapperText {
+    background-color: var(--color-reverse);
+    mix-blend-mode: unset;
+    color: var(--color-blue);
+    /* border: 1px solid var(--color-reverse); */
 }
 
 .sectionTitle {
@@ -17,7 +41,7 @@
 
 .sectionLabel {
     padding: var(--space-s) 0;
-    border-top: 1px solid var(--color-ink);
+    border-top: 1px solid currentColor;
     min-height: 40px;
     position: relative;
 }

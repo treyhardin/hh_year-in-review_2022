@@ -1,9 +1,10 @@
 .launchesSection {
-    background-color: var(--color-red);
+    /* background-color: var(--color-red); */
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    /* align-items: flex-end; */
     position: relative;
+    /* overflow-y: hidden; */
 }
 
 .stickyWrapper {
@@ -30,7 +31,14 @@
 
 .activeProjectTitle {
     font-size: 10vw;
+    letter-spacing: -0.7vw;
+    font-family: var(--font-mono);
     position: sticky;
-    top: 0;
+    top: 50vh;
+    transform: translateY(-50%);
+    width: 100%;
     text-align: center;
+    z-index: 3;
+    color: var(--color-reverse);
+    /* mix-blend-mode: difference; */
 }

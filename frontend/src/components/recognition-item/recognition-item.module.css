@@ -1,0 +1,40 @@
+.recognitionItem {
+    flex: 0 1 30%;
+    border-radius: var(--space-s);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background-color: var(--color-reverse);
+    grid-area: main;
+
+}
+
+.recognitionText {
+    /* background-color: var(--color-reverse); */
+    padding: var(--space-s) var(--space-s);
+}
+
+.recognitionLabel {
+    color: var(--color-reverse);
+    border-bottom: 1px solid currentColor;
+    mix-blend-mode: difference;
+    padding: var(--space-s);
+}
+
+.recognitionProject {
+    margin-bottom: 0.3em;
+}
+
+.recognitionAward {
+    margin-bottom: 0;
+}
+
+.recognitionPublication {
+    margin-bottom: 0;
+}
+
+.recognitionImage {
+    width: 100%;
+}

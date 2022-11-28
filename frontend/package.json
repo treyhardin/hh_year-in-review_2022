@@ -16,6 +16,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.2",
     "@sanity/client": "^3.4.1",
+    "@sanity/image-url": "^1.0.1",
     "gsap": "^3.11.3",
     "solid-js": "^1.5.1",
     "three": "^0.146.0"

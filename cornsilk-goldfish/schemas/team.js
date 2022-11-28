@@ -1,29 +1,29 @@
 export default {
-    name: 'recognition',
-    title: 'Recognition',
+    name: 'team',
+    title: 'Team',
     type: 'document',
     fields: [
+    {
+        name: 'name',
+        title: 'Name',
+        type: 'string',
+    },
       {
-        name: 'project',
-        title: 'Project',
+        name: 'title',
+        title: 'Title',
         type: 'string',
       },
       {
-        name: 'award',
-        title: 'Award',
-        type: 'string',
-      },
-      {
-        name: 'publication',
-        title: 'Publication',
-        type: 'string',
+        name: 'startDate',
+        title: 'Start Date',
+        type: 'datetime',
       },
       {
         name: 'slug',
         title: 'Slug',
         type: 'slug',
         options: {
-          source: 'project',
+          source: 'name',
           maxLength: 96,
         },
       },
@@ -39,7 +39,7 @@ export default {
   
     preview: {
       select: {
-        title: 'project',
+        title: 'name',
         media: 'image',
       },
     },

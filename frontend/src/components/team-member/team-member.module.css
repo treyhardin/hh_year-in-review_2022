@@ -1,0 +1,26 @@
+.teamMemberCard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: var(--space-xl); */
+}
+
+.teamMemberTitle {
+
+}
+
+.teamMemberImage {
+    border-radius: 100%;
+    /* width: calc(60%); */
+    width: 100%;
+}
+
+.textCircle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: var(--color-reverse);
+}

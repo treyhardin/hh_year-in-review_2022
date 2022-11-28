@@ -4,6 +4,10 @@ import client from '../fetch/fetch';
 import SectionTitle from '../section-title/section-title';
 import ProjectCard from '../project-card/project-card';
 
+import changePageColor from '../../helpers/change-page-color';
+
+import viewportDetect from '../../helpers/viewport-detect';
+
 
 const [ activeProject, setActiveProject ] = createSignal()
 
@@ -28,14 +32,20 @@ function Launches() {
   fetchProjects()
 
 
+  
+
+
   return (
-    <section class={styles.launchesSection}>
-      <div class={styles.stickyWrapper}>
-        <SectionTitle title="16" label="Projects Launched" />
-        <div class={styles.activeProjectTitle}>
-          <div class={styles.activeProjectTitle}>{activeProject()}</div>
-        </div>
-      </div>
+
+    <section class={styles.launchesSection} ref={section => changePageColor(section, 'var(--color-red)')}>
+      {/* <div class={styles.stickyWrapper}> */}
+        <SectionTitle 
+          title="16" 
+          label="Projects Launched" 
+          alignment='right'
+        />
+        <div class={styles.activeProjectTitle}>{activeProject()}</div>
+      {/* </div> */}
       <div class={styles.projectsWrapper}>
         <For each={projects()}>
           {(project, i) => 

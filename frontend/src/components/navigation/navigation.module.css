@@ -3,15 +3,14 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    padding: 0 var(--space-l);
-    gap: var(--space-l);
+    padding: var(--space-s);
     border-radius: var(--border-s);
     position: fixed;
     bottom: 0;
     right: 0;
     margin: var(--space-l);
     overflow: hidden;
-    height: 50px;
+    /* height: 50px; */
     z-index: 999;
     box-shadow: var(--shadow-s);
 }
@@ -26,6 +25,7 @@
     background-color: var(--color-blue);
     transition: width var(--easing-default);
     mix-blend-mode: difference;
+    pointer-events: none;
 }
 
 .navLink {
@@ -34,4 +34,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--border-s);
+    transition: all var(--easing-default);
+}
+
+.navLink:hover {
+    background-color: var(--color-blue);
+    color: var(--color-reverse);
 }

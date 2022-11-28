@@ -12,7 +12,6 @@ function App() {
   return (
     
     <div class={styles.App}>
-      {/* <Header /> */}
       <Brand />
       <Navigation />
       <Hero />

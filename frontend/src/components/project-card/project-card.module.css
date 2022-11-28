@@ -18,6 +18,7 @@
 
 .projectImage {
     max-height: 60vh;
+    /* filter: blur(calc((1 - var(--blur)) * 100px)); */
 }
 
 .projectTitle {

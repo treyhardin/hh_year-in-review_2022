@@ -43,6 +43,7 @@ function ProjectCard(props) {
                         
                         let newValue = (valueRange * scrollProgress) + initialRotation
                         projectCard.style.setProperty('--rotation', newValue)
+                        // projectCard.style.setProperty('--blur', scrollProgress)
 
                     }
                     
@@ -57,7 +58,6 @@ function ProjectCard(props) {
         animateScroll(projectCard)
 
         window.addEventListener('resize', () => {
-            rotateCard(projectCard)
             positionCard(projectCard)
         })
     }
