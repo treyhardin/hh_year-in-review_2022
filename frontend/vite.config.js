@@ -8,5 +8,11 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    rollupOptions: {
+      external: [
+        "ScrollSmoother", // ignore react stuff
+      ],
+    },
   },
+    
 });
