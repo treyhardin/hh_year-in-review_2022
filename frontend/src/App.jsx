@@ -53,7 +53,7 @@ function App() {
   return (
     
     <div class={styles.App}>
-      {/* <Preloader /> */}
+      <Preloader />
       <Blob />
       <Brand />
       <Navigation />

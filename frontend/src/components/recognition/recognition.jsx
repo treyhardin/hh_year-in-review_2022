@@ -30,7 +30,7 @@ function Recognition() {
   fetchRecognition()
 
   onMount(() => {
-    changePageColor(recognitionSection, 'var(--color-ink)')
+    changePageColor(recognitionSection, 'var(--color-red)')
   })
 
   return (

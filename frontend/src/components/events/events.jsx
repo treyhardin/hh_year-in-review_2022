@@ -28,7 +28,7 @@ function Events() {
   fetchEvents()
 
   onMount(() => {
-    changePageColor(eventSection, 'var(--color-blue')
+    changePageColor(eventSection, 'var(--color-offwhite')
   })
 
 

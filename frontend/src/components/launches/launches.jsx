@@ -42,7 +42,7 @@ function Launches() {
 
   onMount(() => {
 
-    changePageColor(launchSection, 'var(--color-blue)')
+    changePageColor(launchSection, 'var(--color-ink)')
 
     ScrollTrigger.create({
       trigger: projectTitle,

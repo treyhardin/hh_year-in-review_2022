@@ -3,4 +3,5 @@
     flex-direction: column;
     /* align-items: stretch; */
     justify-content: flex-start;
+    color: var(--color-ink);
 }

@@ -32,7 +32,7 @@ function Team() {
 
   onMount(() => {
     
-    changePageColor(teamSection, 'var(--color-red)')
+    changePageColor(teamSection, 'var(--color-blue)')
   })
 
 
