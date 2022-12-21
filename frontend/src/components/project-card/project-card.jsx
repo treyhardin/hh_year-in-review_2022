@@ -4,7 +4,7 @@ import gsap, { Power4 } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { createEffect, onMount } from 'solid-js'
 
-import { smoother } from '../../App'
+// import { smoother } from '../../App'
 
 function ProjectCard(props) {
 
@@ -15,7 +15,7 @@ function ProjectCard(props) {
 
     onMount(() => {
 
-        smoother().effects(projectCard, {lag: 0.3});
+        // smoother().effects(projectCard, {lag: 0.3});
 
         const maxAngle = 6
         const rotationMultiplier = 2
