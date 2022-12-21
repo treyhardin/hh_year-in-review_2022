@@ -14,7 +14,7 @@ import Preloader from './components/preloader/preloader';
 import Blob from './components/blob/blob';
 import { createSignal } from 'solid-js';
 
-export const [smoother, setSmoother] = createSignal('')
+// export const [smoother, setSmoother] = createSignal('')
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
       // ease: "power4.out", 
     });
 
-    setSmoother(scrollSmoother)
+    // setSmoother(scrollSmoother)
   }
 
   const loadHeader = (element) => {
