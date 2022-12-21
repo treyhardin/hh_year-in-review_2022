@@ -9,7 +9,7 @@ import Navigation from './components/navigation/navigation';
 import Brand from './components/brand/brand';
 import gsap, {Power4} from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 // import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all"
 import Preloader from './components/preloader/preloader';
 import Blob from './components/blob/blob';
@@ -34,21 +34,6 @@ function App() {
 
     // setSmoother(scrollSmoother)
   }
-
-  const loadHeader = (element) => {
-
-    // window.addEventListener('load', () => {
-    //   gsap.fromTo(element, {
-    //       y: '100%',
-    //       // duration: 0.8,
-    //       // ease: Power4.easeOut,
-    //     },{
-    //       y: '0%'
-    //     })
-    // })
-
-  }
-  
   
 
   return (
