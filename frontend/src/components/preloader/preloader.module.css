@@ -1,0 +1,31 @@
+.preloader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-blue);
+    color: var(--color-reverse);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: all var(--easing-default);
+}
+
+.preloader.loaded {
+    /* width: 0vw; */
+    height: 0vh;
+    pointer-events: none;
+    /* opacity: 0; */
+}
+
+.preloader .icon {
+    max-width: 140px;
+    opacity: 1;
+    transition: all var(--easing-default);
+}
+
+
+.preloader.loaded .icon {
+    transform: translateY(-100%);
+    opacity: 0;
+}

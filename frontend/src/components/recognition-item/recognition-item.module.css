@@ -8,19 +8,15 @@
     align-items: stretch;
     background-color: var(--color-reverse);
     grid-area: main;
-
+    text-align: center;
+    background-color: var(--color-ink);
+    color: var(--color-reverse);
+    border: 1px solid var(--color-reverse);
 }
 
 .recognitionText {
     /* background-color: var(--color-reverse); */
     padding: var(--space-s) var(--space-s);
-}
-
-.recognitionLabel {
-    color: var(--color-reverse);
-    border-bottom: 1px solid currentColor;
-    mix-blend-mode: difference;
-    padding: var(--space-s);
 }
 
 .recognitionProject {
@@ -32,7 +28,7 @@
 }
 
 .recognitionPublication {
-    margin-bottom: 0;
+    margin: var(--space-s);
 }
 
 .recognitionImage {

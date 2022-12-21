@@ -1,12 +1,14 @@
 import styles from './recognition.module.css';
 import client from '../fetch/fetch';
 import { urlFor } from '../../helpers/urlBuilder';
-import { createSignal, For } from 'solid-js';
+import { createSignal, For, onMount } from 'solid-js';
 import RecognitionItem from '../recognition-item/recognition-item';
 import changePageColor from '../../helpers/change-page-color';
 import SectionTitle from '../section-title/section-title';
 
 function Recognition() {
+
+  let recognitionSection
 
   const [ recognition, setRecognition ] = createSignal()
 
@@ -17,7 +19,7 @@ function Recognition() {
     client
       .fetch('*[_type == "recognition"]{project, award, publication, image}', {})
       .then(res => {
-        console.log(res)
+        // console.log(res)
         setRecognition(res)
       })
       .catch(err => {
@@ -27,12 +29,17 @@ function Recognition() {
     
   fetchRecognition()
 
+  onMount(() => {
+    changePageColor(recognitionSection, 'var(--color-ink)')
+  })
+
   return (
-    <section class={styles.recognition} ref={section => changePageColor(section, 'var(--color-ink)')}>
+    <section class={styles.recognition} ref={recognitionSection}>
       <SectionTitle 
         title="15"
         label="Design & Dev Awards"
         alignment='center'
+        container={recognitionSection}
       />
       <div class={styles.recognitionWrapper}>
         <For each={recognition()}>

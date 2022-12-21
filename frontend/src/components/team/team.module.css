@@ -1,15 +1,20 @@
 .team {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative;
 }
 
 
 .teamMembersWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--space-xl);
-    width: 80%;
-    justify-self: flex-end;
-    padding: var(--space-l);
+    gap: calc(var(--space-xl) * 2);
+    padding: calc(var(--space-xl) * 2);
+}
+
+@media screen and (max-width: 768px) {
+
+    .teamMembersWrapper {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+    }
 }

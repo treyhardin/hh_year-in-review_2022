@@ -1,25 +1,60 @@
 import styles from './team-member.module.css'
+import { smoother } from '../../App'
+import { onMount } from 'solid-js'
+import gsap, {Power4} from 'gsap'
 
+        
 function TeamMember(props) {
 
+    let teamMemberCard
+    let teamMemberName
+    let teamMemberTitle
+    
+
+    onMount(() => {
+
+        // smoother().effects(teamMemberCard, {lag: 0.1});
+
+        let offsetStrength = 50
+
+        gsap.from(teamMemberCard, {
+            // y: 20,
+            x: `${(Math.random() - 0.5) * 2 * offsetStrength}%`,
+            y: `${(Math.random() - 0.5) * 2 * offsetStrength}%`,
+            opacity: 0,
+            ease: Power4.easeOut,
+            duration: 1,
+            scrollTrigger: {
+                trigger: teamMemberCard,
+                start: 'top bottom-=100',
+                end: 'bottom center',
+                scrub: true,
+            }
+        })
+
+        // gsap.from(teamMemberName, {
+        //     // y: 0,
+        //     opacity: 0,
+        //     rotate: 90,
+        //     ease: Power4.easeOut,
+        //     duration: 0.8,
+        //     scrollTrigger: {
+        //         trigger: teamMemberCard,
+        //         start: 'top center',
+        //         // end: 'bottom top',
+        //     }
+        // })
+
+    })
+    
+
     return (
-        <div class={styles.teamMemberCard}>
-            {/* <p class={styles.teamMemberName}>{props.name}</p>
-            <p class={styles.teamMemberTitle}>{props.title}</p> */}
-            <svg viewBox="0 0 100 100" class={styles.textCircle}>
-                <defs>
-                    <path id="circle"
-                    d="
-                        M 50, 50
-                        m -37, 0
-                        a 37,37 0 1,1 74,0
-                        a 37,37 0 1,1 -74,0"/>
-                </defs>
-                <text fill="currentColor" font-size="8px" line-height="0px">
-                    <textPath xlink:href="#circle">{props.name} · {props.title}</textPath>
-                </text>
-            </svg>
+        <div class={styles.teamMemberCard} ref={teamMemberCard}>
+
             <img class={styles.teamMemberImage} src={props.imageUrl} />
+
+            <p class={`${styles.teamMemberName} h3`}>{props.name}</p>
+            <p class={`${styles.teamMemberTitle} utility`}>{props.title}</p>
             {/* <p>{props.imageUrl}</p> */}
         </div>
     )

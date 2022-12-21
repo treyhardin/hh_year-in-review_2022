@@ -10,6 +10,8 @@
     mix-blend-mode: difference;
     z-index: 999;
     padding: var(--space-l);
+    opacity: 1;
+    transition: opacity var(--easing-default);
 }
 
 .logo {
@@ -20,4 +22,13 @@
 .contact {
     text-decoration: none;
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    .brandWrapper {
+        justify-content: space-between;
+        right: 0;
+        bottom: 60px;
+    }
 }

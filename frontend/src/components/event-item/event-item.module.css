@@ -1,21 +1,40 @@
 .eventItem {
-
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* min-height: 500vh; */
+    /* height: 100vh; */
 }
 
-.eventTitle {
-
+.eventItem:nth-child(even) .eventImagesWrapper {
+    transform: rotate(-2deg);
 }
 
-.eventLocation {
-
+.eventItem:nth-child(odd) .eventImagesWrapper {
+    transform: rotate(1deg);
 }
 
-.eventImagesWrapper {
+
+.eventImages {
+    /* position: relative; */
+    position: absolute;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--space-xl);
+    gap: var(--space-xl);
+    width: auto;
+    height: 100vh;
 
 }
 
 .eventImage {
-    position: sticky;
-    top: 0;
-    width: 100%;
+    /* width: 100%; */
+    height: 60vh;
+    width: auto;
+    border-radius: var(--space-m);
 }

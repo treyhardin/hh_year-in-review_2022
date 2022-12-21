@@ -1,9 +1,15 @@
 .teamMemberCard {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    text-align: center;
     /* padding: var(--space-xl); */
+}
+
+.teamMemberName {
+    margin-bottom: var(--space-s);
 }
 
 .teamMemberTitle {
@@ -14,6 +20,7 @@
     border-radius: 100%;
     /* width: calc(60%); */
     width: 100%;
+    margin-bottom: var(--space-m);
 }
 
 .textCircle {

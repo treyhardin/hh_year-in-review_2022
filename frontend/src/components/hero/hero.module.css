@@ -28,6 +28,7 @@
     flex-direction: row;
     justify-content: space-between;
     justify-self: stretch;
+    /* transform-origin: top left; */
 }
 
 .heroNumber {
@@ -37,4 +38,17 @@
 .ringsModel {
     position: relative;
     flex: 0 0 40.5%;
+}
+
+.ringsModel canvas {
+    /* position: fixed; */
+    /* transform: translateX(0%) rotate(0deg); */
+    inset: unset;
+    transition: all var(--easing-default);
+}
+
+.ringsModel canvas.fixed {
+    /* inset: unset; */
+    /* transform: translateX(50%) rotate(5deg); */
+    /* opacity: 0.1; */
 }

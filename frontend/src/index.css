@@ -50,7 +50,7 @@ body {
   font-size: 14px;
   line-height: 1.4;
   color: var(--color-ink);
-  transition: background-color var(--easing-default);
+  transition: background-color 0.3s ease-out;
   overflow-x: hidden;
 }
 
@@ -101,24 +101,42 @@ h2,
   font-family: var(--font-mono);
   font-size: 42px;
   letter-spacing: -2px;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 h3,
 .h3 {
   font-family: var(--font-serif);
   font-size: 24px;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .utility {
   font-family: var(--font-mono);
   font-size: 14px;
   letter-spacing: 1px;
-  line-height: 1;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
 p {
   margin: 0 0 1rem;
+}
+
+@media screen and (max-width: 768px) {
+
+  :root {
+    /* Space */
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 12px;
+    --space-l: 20px;
+    --space-xl: 40px;
+  }
+
+  .utility {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
 }

@@ -1,4 +1,4 @@
-import { createSignal } from 'solid-js';
+import { createSignal, onMount } from 'solid-js';
 import client from '../fetch/fetch';
 import TeamMember from '../team-member/team-member';
 import styles from './team.module.css';
@@ -7,6 +7,8 @@ import changePageColor from '../../helpers/change-page-color';
 import SectionTitle from '../section-title/section-title';
 
 function Team() {
+
+  let teamSection
 
   const imageSize = 800
 
@@ -28,13 +30,19 @@ function Team() {
     
   fetchTeam()
 
+  onMount(() => {
+    
+    changePageColor(teamSection, 'var(--color-red)')
+  })
+
 
   return (
-    <section class={styles.team} ref={section => changePageColor(section, 'var(--color-ink)')}>
+    <section class={styles.team} ref={teamSection}>
       <SectionTitle 
         title="18" 
-        label="New Team Members" 
-        alignment='right'
+        label="New Team Members"
+        container={teamSection}
+        alignment='left'
       />
       <div class={styles.teamMembersWrapper}>
         <For each={team()}>
@@ -42,6 +50,7 @@ function Team() {
             <TeamMember 
               name={teamMember.name}
               title={teamMember.title}
+              container={teamSection}
               imageUrl={urlFor(teamMember.image).width(imageSize).height(imageSize).url()}
             />
           }

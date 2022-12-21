@@ -1,7 +1,18 @@
 .contact {
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: var(--space-l);
+}
+
+.logo {
+    max-width: 80px;
+    margin-bottom: var(--space-l);
+}
+
+.contactText {
+    text-align: center;
+    max-width: 680px;
 }

@@ -1,6 +1,6 @@
 import { createEffect, onMount } from 'solid-js';
 import * as THREE from 'three';
-import gsap from "gsap";
+import gsap, { Power4 } from "gsap";
 import styles from './hero.module.css';
 import changePageColor from '../../helpers/change-page-color';
 
@@ -81,6 +81,7 @@ function Hero() {
 
         window.addEventListener( 'resize', onWindowResize );
         window.addEventListener( 'mousemove', onMouseMove );
+        // window.addEventListener( 'scroll', onScroll );
         
         // startTime = Date.now();
     }
@@ -131,6 +132,7 @@ function onMouseMove(e) {
   
 
 function render() {
+
     renderer.render( scene, camera );
 }
   
@@ -147,14 +149,38 @@ function animate() {
     render();
 }
 
+const animateHeroText = (element) => {
+
+    window.addEventListener('load', () => {
+        gsap.from(element, {
+          y: '-200%',
+          duration: 1.2,
+          ease: Power4.easeOut
+        })
+      })
+}
+
+const animateHeroNumbers = (element) => {
+
+    window.addEventListener('load', () => {
+        gsap.from(element, {
+          y: '10%',
+          skewY: 2,
+          opacity: 0,
+          duration: 1.2,
+          ease: Power4.easeOut
+        })
+      })
+}
+
   return (
     <section class={styles.hero} ref={section => changePageColor(section, 'var(--page-color-default')}>
         <div class='container'>
             <div class={styles.heroInner}>
-                <div class={styles.heroText}>
+                <div class={styles.heroText} ref={heroText => animateHeroText(heroText)}>
                     <p>Just like that, another year is behind us — and what a year it’s been. We’re celebrating with a look back at the projects, events, and growth that have kept us busy over the past year.</p>
                 </div>
-                <div class={styles.heroNumbersWrapper}>
+                <div class={styles.heroNumbersWrapper} ref={heroNumbers => animateHeroNumbers(heroNumbers)}>
                     <div class={styles.heroNumbers}>
                         <svg class={styles.heroNumber} viewBox="0 0 229 357" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g>

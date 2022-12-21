@@ -5,6 +5,7 @@
     /* align-items: flex-end; */
     position: relative;
     /* overflow-y: hidden; */
+    /* min-height: 400vh; */
 }
 
 .stickyWrapper {
@@ -21,24 +22,28 @@
     z-index: 3;
 }
 
-.projectsWrapper {
+/* .projectsWrapper {
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
     padding: 0 var(--space-l);
     align-self: stretch;
-}
+} */
 
 .activeProjectTitle {
+    position: absolute;
     font-size: 10vw;
     letter-spacing: -0.7vw;
     font-family: var(--font-mono);
-    position: sticky;
-    top: 50vh;
-    transform: translateY(-50%);
+    /* position: sticky; */
+    /* top: 50vh; */
+    /* transform: translateY(-50%); */
+    height: 100vh;
     width: 100%;
     text-align: center;
     z-index: 3;
     color: var(--color-reverse);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* mix-blend-mode: difference; */
 }
