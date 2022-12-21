@@ -1,5 +1,5 @@
 import styles from './team-member.module.css'
-import { smoother } from '../../App'
+// import { smoother } from '../../App'
 import { onMount } from 'solid-js'
 import gsap, {Power4} from 'gsap'
 
