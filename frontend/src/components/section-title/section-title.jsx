@@ -79,6 +79,11 @@ function SectionTitle(props) {
                 <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
                 <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
                 <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
+                <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
+                <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
+                <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
+                <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
+                <p class={props.textTitle ? `utility` :  `h3`}>{props.label}</p>
             </div>
         </div>
     </div>

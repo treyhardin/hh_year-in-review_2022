@@ -84,8 +84,16 @@
 }
 
 @media screen and (max-width: 768px) {
-    .sectionTitleWrapper {
+    .sectionTitleWrapper,
+    .sectionTitleWrapper.left,
+    .sectionTitleWrapper.right,
+    .sectionTitleWrapper.center {
+        border-radius: 0;
         text-align: center;
         width: 100%;
+    }
+
+    .sectionTitleWrapper.center {
+        display: none;
     }
 }

@@ -19,17 +19,12 @@
 
 .teamMemberImage {
     border-radius: 100%;
-    /* width: calc(60%); */
     width: 100%;
     margin-bottom: var(--space-m);
     max-width: 400px;
 }
 
-.textCircle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    color: var(--color-reverse);
+
+@media screen and (max-width: 768px) {
+
 }
