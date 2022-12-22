@@ -1,5 +1,6 @@
 import styles from './brand.module.css';
-import { isPageEnd } from '../contact/contact';
+// import { isPageEnd } from '../contact/contact';
+import { isPageEnd } from '../../App';
 import gsap, {Power4} from 'gsap';
 import { onMount } from 'solid-js'
 

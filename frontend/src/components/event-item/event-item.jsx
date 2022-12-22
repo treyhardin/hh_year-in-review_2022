@@ -1,11 +1,9 @@
-import client from '../fetch/fetch';
-import { createSignal, onMount } from 'solid-js';
+import { onMount } from 'solid-js';
 import styles from './event-item.module.css'
 import { urlFor } from '../../helpers/urlBuilder';
 import SectionTitle from '../section-title/section-title';
 import gsap, { Power4 } from 'gsap'
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import changePageColor from '../../helpers/change-page-color';
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 function EventItem(props) {
 
@@ -18,8 +16,6 @@ function EventItem(props) {
   onMount(() => {
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
-
-    // changePageColor(eventItem, 'var(--color-ink)')
 
     gsap.to(eventImages, {
       x: window.innerWidth + eventImages.offsetWidth * -1,
@@ -50,7 +46,7 @@ function EventItem(props) {
         <div class={styles.eventImagesWrapper}>
           <div class={styles.eventImages} ref={eventImages}>
             <For each={props.images}>
-                {image => <img class={styles.eventImage} src={urlFor(image).url()} alt={image.alt} />}
+                {image => <img class={styles.eventImage} src={urlFor(image).width(1000).url()} alt={image.alt} />}
             </For>
           </div>
         </div>

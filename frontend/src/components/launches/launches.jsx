@@ -57,7 +57,7 @@ function Launches() {
 
   return (
 
-    <section class={styles.launchesSection} ref={launchSection}>
+    <section class={styles.launchesSection} ref={launchSection} id="work">
       <SectionTitle 
         title="16" 
         label="Projects Launched" 

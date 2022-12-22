@@ -10,7 +10,7 @@ function Team() {
 
   let teamSection
 
-  const imageSize = 800
+  const imageSize = 400
 
   const [ team, setTeam ] = createSignal()
 
@@ -37,7 +37,7 @@ function Team() {
 
 
   return (
-    <section class={styles.team} ref={teamSection}>
+    <section class={styles.team} ref={teamSection} id="team">
       <SectionTitle 
         title="18" 
         label="New Team Members"

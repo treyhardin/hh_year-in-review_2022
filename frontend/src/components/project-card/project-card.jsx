@@ -2,6 +2,7 @@ import styles from './project-card.module.css';
 import { setActiveProject } from '../launches/launches'
 import gsap, { Power4 } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { urlFor } from '../../helpers/urlBuilder';
 import { createEffect, onMount } from 'solid-js'
 
 // import { smoother } from '../../App'
@@ -66,7 +67,7 @@ function ProjectCard(props) {
     return (
         <div class={styles.projectCard} ref={projectCard} >
             <div class={styles.projectCardInner} ref={projectCardInner}>
-                <img class={styles.projectImage} src={props.imageUrl} />
+                <img class={styles.projectImage} src={urlFor(props.imageUrl).width(600).url()} />
                 <div class={styles.projectTitle}><p class="utility">{props.name}</p></div>
             </div>
         </div>

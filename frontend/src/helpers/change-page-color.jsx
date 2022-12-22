@@ -10,7 +10,7 @@ const changePageColor = (element, color) => {
     ScrollTrigger.create({
         trigger: element,
         start:'top top+=100',
-        end:'bottom center',
+        // end:'bottom center',
         onEnter: () => gsap.to(body, {'--page-color': color,}), 
         onEnterBack: () => gsap.to(body, {'--page-color': color,}), 
       });

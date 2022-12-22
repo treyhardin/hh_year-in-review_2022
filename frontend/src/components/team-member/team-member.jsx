@@ -32,19 +32,6 @@ function TeamMember(props) {
             }
         })
 
-        // gsap.from(teamMemberName, {
-        //     // y: 0,
-        //     opacity: 0,
-        //     rotate: 90,
-        //     ease: Power4.easeOut,
-        //     duration: 0.8,
-        //     scrollTrigger: {
-        //         trigger: teamMemberCard,
-        //         start: 'top center',
-        //         // end: 'bottom top',
-        //     }
-        // })
-
     })
     
 

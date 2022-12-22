@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    align-items: center;
     text-align: center;
     color: var(--color-reverse);
     /* padding: var(--space-xl); */
@@ -22,6 +22,7 @@
     /* width: calc(60%); */
     width: 100%;
     margin-bottom: var(--space-m);
+    max-width: 400px;
 }
 
 .textCircle {

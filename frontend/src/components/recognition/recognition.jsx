@@ -34,7 +34,7 @@ function Recognition() {
   })
 
   return (
-    <section class={styles.recognition} ref={recognitionSection}>
+    <section class={styles.recognition} ref={recognitionSection} id="recognition">
       <SectionTitle 
         title="15"
         label="Design & Dev Awards"

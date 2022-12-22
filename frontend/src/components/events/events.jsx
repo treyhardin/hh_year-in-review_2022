@@ -33,7 +33,7 @@ function Events() {
 
 
   return (
-    <section class={styles.events} ref={eventSection}>
+    <section class={styles.events} ref={eventSection} id="events">
       <For each={events()}>
         {(event, i) => 
           <EventItem 

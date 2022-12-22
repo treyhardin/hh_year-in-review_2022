@@ -3,23 +3,11 @@ import { createSignal, onMount } from 'solid-js';
 import changePageColor from '../../helpers/change-page-color';
 import styles from './contact.module.css';
 
-const [ isPageEnd, setIsPageEnd ] = createSignal()
-
 function Contact() {
 
   let contactSection
 
   onMount(() => {
-
-    ScrollTrigger.create({
-      trigger: contactSection,
-      start: 'top top+=100',
-      onEnter: () => setIsPageEnd(true),
-      onEnterBack: () => setIsPageEnd(true),
-      onLeave: () => setIsPageEnd(false),
-      onLeaveBack: () => setIsPageEnd(false),
-    })
-
     changePageColor(contactSection, 'var(--page-color-default')
   })
 
@@ -34,4 +22,4 @@ function Contact() {
   );
 }
 
-export {Contact, isPageEnd};
+export default Contact;

@@ -4,7 +4,7 @@
     right: 0;
     z-index: 999;
     /* transition: all var(--easing-default); */
-    min-width: 0px;
+    /* min-width: 0px; */
 }
 
 .navigationInner {    
@@ -18,14 +18,9 @@
     box-shadow: var(--shadow-s);
     padding: var(--space-s);
     overflow: hidden;
-    transition: all var(--easing-default);
-}
+    /* transition: all var(--easing-default); */
 
-.navigation.pageEnd .navigationInner:hover {
-    background-color: var(--color-blue);
-    color: var(--color-reverse);
 }
-
 
 .scrollProgress {
     position: absolute;
@@ -38,10 +33,7 @@
     mix-blend-mode: difference;
     pointer-events: none;
     opacity: 1;
-}
-
-.navigation.pageEnd .scrollProgress{
-    opacity: 0;
+    transition: opacity var(--easing-default);
 }
 
 .navLink {
@@ -54,6 +46,22 @@
     padding: var(--space-s) var(--space-m);
     border-radius: var(--border-s);
     transition: all var(--easing-default);
+    border: none;
+    background-color: unset;
+}
+
+.navigation.pageEnd {
+    /* min-width: 100%;
+    transition: width 3s ease; */
+}
+
+.navigation.pageEnd .navigationInner {
+    background-color: var(--color-yellow);
+    color: var(--color-ink);
+}
+
+.navigation.pageEnd .scrollProgress{
+    display: none;
 }
 
 .navigation.pageEnd .navLink {
