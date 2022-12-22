@@ -70,28 +70,28 @@ function Navigation() {
             <div class={styles.navigationInner}>
                 {isPageEnd() ? 
                 <>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
-                    <a class={`${styles.navLink} utility`} href="">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
+                    <a class={`${styles.navLink} utility`} href="https://www.halfhelix.com/contact" target="_blank">Get in Touch &#183;</a>
                 </> : 
                 <>
                     <button class={`${styles.navLink} utility`} ref={button => addClickListener(button, '#work')}>Work</button>
