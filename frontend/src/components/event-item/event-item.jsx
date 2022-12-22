@@ -14,6 +14,17 @@ function EventItem(props) {
   
 
   onMount(() => {
+    let eventsArray = document.querySelectorAll(`div[id~="_eventItem-"]`)
+
+    console.log("eventsArray", eventsArray, eventsArray.length);
+
+    function killTimeline(id) {
+
+      let killAnimation = ScrollTrigger.getById(id);
+      killAnimation?.kill()
+      console.log(id, ' was murdered')
+    }
+    window.onresize = killTimeline;
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
@@ -22,6 +33,8 @@ function EventItem(props) {
       ease: 'linear',
       // ease: Power4.easeOut,
       scrollTrigger: {
+        id: props.id,
+        markers: true,
         trigger: eventItem,
         start: 'top top',
         end: 'bottom bottom',
@@ -35,7 +48,7 @@ function EventItem(props) {
   })
 
   return (
-    <div class={styles.eventItem} ref={eventItem}>
+    <div id={props.id} class={styles.eventItem} ref={eventItem}>
         <SectionTitle
             title={props.name}
             label={props.location} 
