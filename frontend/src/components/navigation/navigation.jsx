@@ -4,16 +4,14 @@ import { isPageEnd } from '../../App'
 import gsap, { Power4 } from 'gsap';
 import { onMount } from 'solid-js';
 import { smoother } from '../../App'
+import scroll from './../../helpers/scroll';
 
 function Navigation() {
-
     let navigation
     let scrollProgress
 
     onMount(() => {
-
         window.addEventListener('load', () => {
-
             gsap.from(navigation, {
                 y: '100%',
                 duration: 0.8,
@@ -24,41 +22,34 @@ function Navigation() {
 
         let documentHeight = document.documentElement;
         let bodyHeight = document.body;
+        let isPageEndFlag = false
 
-        window.addEventListener('scroll', () => {
+        scroll((y) => {
+            scrollProgress.style.setProperty('--scroll', (
+                Math.floor((documentHeight['scrollTop']||bodyHeight['scrollTop']) / ((documentHeight['scrollHeight']||bodyHeight['scrollHeight']) - documentHeight.clientHeight) * 100)
+            ))
 
-            window.requestAnimationFrame(() => {
-
-                let scrollPercent = Math.floor((documentHeight['scrollTop']||bodyHeight['scrollTop']) / ((documentHeight['scrollHeight']||bodyHeight['scrollHeight']) - documentHeight.clientHeight) * 100);
-                scrollProgress.style.setProperty('--scroll', scrollPercent)
-    
-            })
-
-            if (isPageEnd()) {
-
-                    navigation.classList.add(styles.pageEnd)
-                    gsap.to(navigation, {
-                        width: '100%',
-                        ease: Power4.easeOut,
-                        duration: 0.8,
-                    })
-    
-                } else {
-
-                    navigation.classList.remove(styles.pageEnd)
-                    gsap.to(navigation, {
-                        width: 'auto',
-                        ease: Power4.easeOut,
-                        duration: 0.8,
-                    })
-                }
-
-            
-        }) 
+            if (isPageEnd() && !isPageEndFlag) {
+                navigation.classList.add(styles.pageEnd)
+                gsap.to(navigation, {
+                    width: '100%',
+                    ease: Power4.easeOut,
+                    duration: 0.8,
+                })
+                isPageEndFlag = true
+            } else if (!isPageEnd() && isPageEndFlag) {
+                navigation.classList.remove(styles.pageEnd)
+                gsap.to(navigation, {
+                    width: 'auto',
+                    ease: Power4.easeOut,
+                    duration: 0.8,
+                })
+                isPageEndFlag = false
+            }
+        })
     })
 
     const addClickListener = (element, target) => {
-
         element.addEventListener("click", () => {
             smoother().scrollTo(target, true, 'top top-=10')
         })

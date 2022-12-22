@@ -3,12 +3,13 @@ import styles from './brand.module.css';
 import { isPageEnd } from '../../App';
 import gsap, {Power4} from 'gsap';
 import { onMount } from 'solid-js'
+import scroll from './../../helpers/scroll';
 
 function Brand() {
-
   let brand
 
   onMount(() => {
+    let isPageEndFlag = false
 
     window.addEventListener('load', () => {
       gsap.from(brand, {
@@ -17,23 +18,22 @@ function Brand() {
         ease: Power4.easeOut
       })
     })
-
-    window.addEventListener('scroll', () => {
-
-        if (isPageEnd()) {
-            // element.classList.add(styles.pageEnd)
-            gsap.to(brand, {
-              y: '100%',
-              opacity: 0,
-            })
-        } else {
-          gsap.to(brand, {
-            y: '0%',
-            opacity: 1,
-          })
-        }
-    }) 
-
+    
+    scroll(() => {
+      if (isPageEnd() && !isPageEndFlag) {
+        gsap.to(brand, {
+          y: '100%',
+          opacity: 0,
+        })
+        isPageEndFlag = true
+      } else if (!isPageEnd() && isPageEndFlag) {
+        gsap.to(brand, {
+          y: '0%',
+          opacity: 1,
+        })
+        isPageEndFlag = false
+      }
+    })
   })
 
   return (

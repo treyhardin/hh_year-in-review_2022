@@ -13,16 +13,21 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Preloader from './components/preloader/preloader';
 import Blob from './components/blob/blob';
 import { createSignal } from 'solid-js';
+import scroll from './helpers/scroll';
 
 export const [smoother, setSmoother] = createSignal('')
 export const [isPageEnd, setIsPageEnd] = createSignal(false)
 
-
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-const registerSmoothScroll = (el) => {
+let scrollSmoother;
 
-  let scrollSmoother = ScrollSmoother.create({
+const registerSmoothScroll = (el) => {
+  if (scrollSmoother) {
+    return
+  }
+
+  scrollSmoother = ScrollSmoother.create({
     smooth: 0.5,               // how long (in seconds) it takes to "catch up" to the native scroll position
     effects: true,           // looks for data-speed and data-lag attributes on elements
     smoothTouch: 0.1,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
@@ -33,20 +38,17 @@ const registerSmoothScroll = (el) => {
   setSmoother(scrollSmoother)
 }
 
+scroll((y, prevY) => {
+  let pageEndOffset = 10
+
+  if ((window.innerHeight + y) >= document.body.offsetHeight - pageEndOffset) {
+    setIsPageEnd(true)
+  } else {
+    setIsPageEnd(false)
+  }
+})
+
 function App() {
-
-  window.addEventListener("scroll", (e) => {
-
-    let pageEndOffset = 10
-
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - pageEndOffset) {
-          setIsPageEnd(true)
-      } else {
-        setIsPageEnd(false)
-      }
-
-  });
-
   return (
     
     <div class={styles.App}>
