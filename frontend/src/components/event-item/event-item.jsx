@@ -46,7 +46,7 @@ function EventItem(props) {
         <div class={styles.eventImagesWrapper}>
           <div class={styles.eventImages} ref={eventImages}>
             <For each={props.images}>
-                {image => <img class={styles.eventImage} src={urlFor(image).width(1000).url()} alt={image.alt} />}
+                {image => <img class={styles.eventImage} src={urlFor(image).width(1200).url()} alt={image.alt} />}
             </For>
           </div>
         </div>
