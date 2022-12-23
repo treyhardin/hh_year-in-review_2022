@@ -37,6 +37,7 @@ function Events() {
       <For each={events()}>
         {(event, i) => 
           <EventItem 
+            id={`eventItem-${i()}`}
             name={event.title}
             location={event.location}
             images={event.images}
