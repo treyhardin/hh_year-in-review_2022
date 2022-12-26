@@ -39,7 +39,7 @@ function EventItem(props) {
         start: 'top top',
         end: 'bottom bottom',
         // endTrigger: eventItem,
-        // toggleActions: 'play reset replay reset',
+        toggleActions: "play none none reverse",
         scrub: true,
         pin: eventImages,
       }
