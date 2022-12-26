@@ -28,7 +28,7 @@ function EventItem(props) {
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
-    gsap.to(eventImages, {
+    let tl = gsap.to(eventImages, {
       x: window.innerWidth + eventImages.offsetWidth * -1,
       ease: 'linear',
       // ease: Power4.easeOut,
@@ -37,13 +37,15 @@ function EventItem(props) {
         // markers: true,
         trigger: eventItem,
         start: 'top top',
-        end: 'bottom bottom',
+        end: () => "+=" + eventItem.offsetWidth, 
         // endTrigger: eventItem,
-        toggleActions: "play none none reverse",
+        // toggleActions: "play none none reverse",
         scrub: true,
         pin: eventImages,
       }
     })
+
+    // tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
     
   })
 
