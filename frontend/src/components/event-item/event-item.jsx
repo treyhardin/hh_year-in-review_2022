@@ -34,7 +34,7 @@ function EventItem(props) {
       // ease: Power4.easeOut,
       scrollTrigger: {
         id: props.id,
-        markers: true,
+        // markers: true,
         trigger: eventItem,
         start: 'top top',
         end: 'bottom bottom',
