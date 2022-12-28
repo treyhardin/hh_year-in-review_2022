@@ -29,7 +29,6 @@
     gap: var(--space-xl);
     width: auto;
     height: 100vh;
-    left: -100%;
 }
 
 .eventImage {
