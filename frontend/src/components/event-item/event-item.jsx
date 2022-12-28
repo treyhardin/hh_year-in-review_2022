@@ -24,7 +24,7 @@ function EventItem(props) {
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
-    let componentWidth = - (window.innerWidth + eventImages.offsetWidth);
+    let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
 
     gsap.to(eventImages, {
       x: componentWidth,
@@ -32,6 +32,7 @@ function EventItem(props) {
       scrollTrigger: {
         id: props.id,
         trigger: eventItem,
+        invalidateOnRefresh: true,
         start: 'top top',
         end: () => "+=" + eventItem.offsetWidth, 
         scrub: true,
