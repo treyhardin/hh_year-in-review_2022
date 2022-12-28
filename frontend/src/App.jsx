@@ -38,6 +38,10 @@ const registerSmoothScroll = (el) => {
   setSmoother(scrollSmoother)
 }
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 scroll((y, prevY) => {
   let pageEndOffset = 10
 

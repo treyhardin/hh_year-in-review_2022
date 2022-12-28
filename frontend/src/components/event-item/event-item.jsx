@@ -16,7 +16,7 @@ function EventItem(props) {
   onMount(() => {
     let eventsArray = document.querySelectorAll(`div[id~="_eventItem-"]`)
 
-    console.log("eventsArray", eventsArray, eventsArray.length);
+    // console.log("eventsArray", eventsArray, eventsArray.length);
 
     function killTimeline(id) {
 
@@ -28,8 +28,11 @@ function EventItem(props) {
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
-    let tl = gsap.to(eventImages, {
-      x: window.innerWidth + eventImages.offsetWidth * -1,
+    let componentWidth = - (window.innerWidth + eventImages.offsetWidth);
+
+    console.log("componentWidth", componentWidth);
+    gsap.to(eventImages, {
+      x: componentWidth,
       ease: 'linear',
       // ease: Power4.easeOut,
       scrollTrigger: {
@@ -45,7 +48,7 @@ function EventItem(props) {
       }
     })
 
-    // tl.fromTo(section.querySelector(".afterImage"), { xPercent: 100, x: 0}, {xPercent: 0})
+    // tl.fromTo('.eventImages', { xPercent: 100, x: 0}, {xPercent: 0})
     
   })
 
