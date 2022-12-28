@@ -16,13 +16,9 @@ function EventItem(props) {
   onMount(() => {
     let eventsArray = document.querySelectorAll(`div[id~="_eventItem-"]`)
 
-    // console.log("eventsArray", eventsArray, eventsArray.length);
-
     function killTimeline(id) {
-
       let killAnimation = ScrollTrigger.getById(id);
       killAnimation?.kill()
-      console.log(id, ' was murdered')
     }
     window.onresize = killTimeline;
 
@@ -30,25 +26,18 @@ function EventItem(props) {
 
     let componentWidth = - (window.innerWidth + eventImages.offsetWidth);
 
-    console.log("componentWidth", componentWidth);
     gsap.to(eventImages, {
       x: componentWidth,
       ease: 'linear',
-      // ease: Power4.easeOut,
       scrollTrigger: {
         id: props.id,
-        // markers: true,
         trigger: eventItem,
         start: 'top top',
         end: () => "+=" + eventItem.offsetWidth, 
-        // endTrigger: eventItem,
-        // toggleActions: "play none none reverse",
         scrub: true,
         pin: eventImages,
       }
     })
-
-    // tl.fromTo('.eventImages', { xPercent: 100, x: 0}, {xPercent: 0})
     
   })
 
