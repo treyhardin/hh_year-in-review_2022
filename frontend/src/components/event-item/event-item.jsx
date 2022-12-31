@@ -27,21 +27,25 @@ function EventItem(props) {
     // let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
     let componentWidth = - (eventImages.offsetWidth - window.innerWidth * 0.5);
 
-    gsap.to(eventImages, {
-      x: componentWidth,
-      ease: 'linear',
-      scrollTrigger: {
-        id: props.id,
-        trigger: eventItem,
-        invalidateOnRefresh: true,
-        start: 'top top',
-        end: 'bottom bottom',
-        // end: () => "+=" + eventItem.offsetWidth, 
-        scrub: true,
-        pin: eventImages,
-        // pinSpacer: true,
-      }
+    window.addEventListener('load', () => {
+
+      gsap.to(eventImages, {
+        x: componentWidth,
+        ease: 'linear',
+        scrollTrigger: {
+          id: props.id,
+          trigger: eventItem,
+          invalidateOnRefresh: true,
+          start: 'top top',
+          end: 'bottom bottom',
+          // end: () => "+=" + eventItem.offsetWidth, 
+          scrub: true,
+          pin: eventImages,
+          // pinSpacer: true,
+        }
+      })
     })
+
     
   })
 
