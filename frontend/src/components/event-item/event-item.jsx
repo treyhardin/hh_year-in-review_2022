@@ -24,8 +24,8 @@ function EventItem(props) {
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
-    let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
-    // let componentWidth = - (window.innerWidth + eventImages.offsetWidth);
+    // let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
+    let componentWidth = - (eventImages.offsetWidth - window.innerWidth * 0.5);
 
     gsap.to(eventImages, {
       x: componentWidth,
