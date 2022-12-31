@@ -24,19 +24,21 @@ function EventItem(props) {
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
+    let componentWidth;
+
+    window.addEventListener('load', () => {
+      componentWidth = - (eventImages.offsetWidth - window.innerWidth );
+      addScrollListener()
+    })
+
     // let componentWidth = - (eventImages.offsetWidth - window.innerWidth * 0.5);
-    let componentWidth = (eventImages.offsetWidth - window.innerWidth );
+    
 
     window.addEventListener('resize', () => {
       componentWidth = (eventImages.offsetWidth - window.innerWidth );
     })
-    // let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
-    
 
-    // createEffect(() => {
-
-      
-
+    const addScrollListener = () => {
       gsap.fromTo(eventImages, {
         x: 0,
       }, {
@@ -54,7 +56,7 @@ function EventItem(props) {
           // pinSpacer: true,
         }
       })
-    // })
+    }
 
     
   })
