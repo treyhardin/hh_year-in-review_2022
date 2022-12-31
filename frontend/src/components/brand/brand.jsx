@@ -38,8 +38,8 @@ function Brand() {
 
   return (
     <div class={styles.brandWrapper} ref={brand}>
-        <a href="#" class={`${styles.logo} h3`} target="_blank">Half Helix</a>
-        <a href="#" class={`${styles.contact}`} target="_blank">Get in Touch</a>
+        <a href="https://www.halfhelix.com/" class={`${styles.logo} h3`} target="_blank">Half Helix</a>
+        <a href="https://www.halfhelix.com/contact" class={`${styles.contact}`} target="_blank">Get in Touch</a>
     </div>
   );
 }
