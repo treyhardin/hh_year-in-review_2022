@@ -16,30 +16,25 @@ function EventItem(props) {
   onMount(() => {
     let eventsArray = document.querySelectorAll(`div[id~="_eventItem-"]`)
 
-    console.log("eventsArray", eventsArray, eventsArray.length);
-
     function killTimeline(id) {
-
       let killAnimation = ScrollTrigger.getById(id);
       killAnimation?.kill()
-      console.log(id, ' was murdered')
     }
     window.onresize = killTimeline;
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
+    let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
+
     gsap.to(eventImages, {
-      x: window.innerWidth + eventImages.offsetWidth * -1,
+      x: componentWidth,
       ease: 'linear',
-      // ease: Power4.easeOut,
       scrollTrigger: {
         id: props.id,
-        // markers: true,
         trigger: eventItem,
+        invalidateOnRefresh: true,
         start: 'top top',
-        end: 'bottom bottom',
-        // endTrigger: eventItem,
-        // toggleActions: 'play reset replay reset',
+        end: () => "+=" + eventItem.offsetWidth, 
         scrub: true,
         pin: eventImages,
       }
@@ -57,7 +52,7 @@ function EventItem(props) {
             container={eventItem}
         />
         <div class={styles.eventImagesWrapper}>
-          <div class={styles.eventImages} ref={eventImages}>
+          <div class={`eventImages ${styles.eventImages}`} ref={eventImages}>
             <For each={props.images}>
                 {image => <img class={styles.eventImage} src={urlFor(image).width(1200).url()} alt={image.alt} />}
             </For>

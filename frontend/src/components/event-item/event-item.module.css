@@ -3,8 +3,7 @@
     position: relative;
     flex-direction: column;
     justify-content: flex-start;
-    /* min-height: 500vh; */
-    /* height: 100vh; */
+    min-height: 100%;
 }
 
 .eventItem:nth-child(even) .eventImagesWrapper {
@@ -21,6 +20,7 @@
     position: absolute;
     /* top: 50%;
     transform: translateY(-50%); */
+    margin-left: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -29,7 +29,7 @@
     gap: var(--space-xl);
     width: auto;
     height: 100vh;
-
+    left: -100%;
 }
 
 .eventImage {
