@@ -13,7 +13,7 @@ function EventItem(props) {
   let eventImages
   
 
-  onMount(() => {
+  onMount(async () => {
     let eventsArray = document.querySelectorAll(`div[id~="_eventItem-"]`)
 
     function killTimeline(id) {
@@ -25,14 +25,6 @@ function EventItem(props) {
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
     let componentWidth;
-
-    window.addEventListener('load', () => {
-      componentWidth = - (eventImages.offsetWidth - window.innerWidth );
-      addScrollListener()
-    })
-
-    // let componentWidth = - (eventImages.offsetWidth - window.innerWidth * 0.5);
-    
 
     window.addEventListener('resize', () => {
       componentWidth = (eventImages.offsetWidth - window.innerWidth );
@@ -57,6 +49,11 @@ function EventItem(props) {
         }
       })
     }
+
+    // const imageWidth = eventImages.offsetWidth
+    // componentWidth = - (imageWidth - window.innerWidth );
+    componentWidth = - window.innerHeight * 0.5 * props.images.length
+    addScrollListener()
 
     
   })
