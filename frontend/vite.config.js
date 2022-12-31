@@ -3,6 +3,7 @@ import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
   plugins: [solidPlugin()],
+  assetsInclude: ['**/*.png'],
   server: {
     port: 3000,
   },
