@@ -1,5 +1,7 @@
 import scroll from 'raf-scroll.js'
 
+// console.log(scroll)
+
 const handlers = []
 
 scroll( (y, prevY) => {
