@@ -1,4 +1,4 @@
-import { onMount } from 'solid-js';
+import { createEffect, onMount } from 'solid-js';
 import styles from './event-item.module.css'
 import { urlFor } from '../../helpers/urlBuilder';
 import SectionTitle from '../section-title/section-title';
@@ -24,14 +24,22 @@ function EventItem(props) {
 
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
+    // let componentWidth = - (eventImages.offsetWidth - window.innerWidth * 0.5);
+    let componentWidth = (eventImages.offsetWidth - window.innerWidth);
+
+    window.addEventListener('resize', () => {
+      componentWidth = - (eventImages.offsetWidth - window.innerWidth );
+    })
     // let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
     
 
-    window.addEventListener('load', () => {
+    // createEffect(() => {
 
-      let componentWidth = - (eventImages.offsetWidth - window.innerWidth * 0.5);
+      
 
-      gsap.to(eventImages, {
+      gsap.fromTo(eventImages, {
+        x: componentWidth * -1,
+      }, {
         x: componentWidth,
         ease: 'linear',
         scrollTrigger: {
@@ -46,7 +54,7 @@ function EventItem(props) {
           // pinSpacer: true,
         }
       })
-    })
+    // })
 
     
   })
