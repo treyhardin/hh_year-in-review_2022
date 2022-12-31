@@ -25,10 +25,10 @@ function EventItem(props) {
     eventItem.style.minHeight = `${props.images.length * 100}vh`;
 
     // let componentWidth = - (eventImages.offsetWidth - window.innerWidth * 0.5);
-    let componentWidth = (eventImages.offsetWidth - window.innerWidth);
+    let componentWidth = (eventImages.offsetWidth - window.innerWidth );
 
     window.addEventListener('resize', () => {
-      componentWidth = - (eventImages.offsetWidth - window.innerWidth );
+      componentWidth = (eventImages.offsetWidth - window.innerWidth );
     })
     // let componentWidth = - (window.innerWidth + eventImages.offsetWidth) / props.images.length;
     
@@ -38,7 +38,7 @@ function EventItem(props) {
       
 
       gsap.fromTo(eventImages, {
-        x: componentWidth * -1,
+        x: 0,
       }, {
         x: componentWidth,
         ease: 'linear',
